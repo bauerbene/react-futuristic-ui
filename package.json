@@ -3,13 +3,12 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/bauerbene"
   },
-  "version": "1.0.0",
+  "version": "1.0.2",
   "repository": "git@github.com:bauerbene/react-futuristic-ui.git",
   "author": "Benedikt Bauer <benedikt.bauer@posteo.de>",
   "license": "MIT",
   "private": false,
-  "main": "dist/csj/index.js",
-  "module": "dist/esm/index.js",
+  "module": "dist/index.js",
   "files": [
     "dist"
   ],
@@ -23,7 +22,10 @@
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.2.1",
     "@rollup/plugin-typescript": "^8.3.2",
+    "postcss": "^8.4.12",
     "rollup-plugin-dts": "^4.2.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "sass": "^1.51.0",
     "tslib": "^2.4.0"
   },
   "scripts": {
