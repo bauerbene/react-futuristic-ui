@@ -1,7 +1,7 @@
 .button {
     &Base {
         position: relative;
-        border: solid 1px rgba(0, 214, 252, 0.3);
+        border: none;
         color: rgba(0, 214, 252, 0.5);
         background: none;
         text-transform: uppercase;
@@ -12,7 +12,104 @@
         padding: 0;
         transition: all 0.25s ease;
         outline: none;
+      
+        &::before { /* right decoration */
+            content: "";
+            position: absolute;
+            bottom: 50%;
+            right: 0;
+            width: 1px;
+            height: 20px;
+            transform: translateX(1px);
+            background: rgba(0, 214, 252, 1);
+            transition: all 0.25s ease;
+        }
+      
+        &::after { /* left decoration */
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 1px;
+            height: 20px;
+            transform: translateX(-1px);
+            background: rgba(0, 214, 252, 1);
+            transition: all 0.25s ease;
+        }
+
+        &:hover {
+            color: rgba(0, 214, 252, 1);
+            text-shadow: 0 0 8px rgba(0, 214, 252, 0.4);
+            &.buttonBase::before {
+                bottom: 20.9px;
+            }
+            &.buttonBase::after {
+                top: 21px;
+            }
+            .buttonSideLeft::after {
+                right: 0;
+                width: 20px;
+            }
+            .buttonSideRight::after {
+                left: 0;
+                width: 20px;
+            }
+            .buttonSideLeft::before {
+                box-shadow: 2px -2px 2px  rgba(0, 214, 252, 0.5);
+            }
+            .buttonSideRight::before {
+                box-shadow: -2px 2px 2px  rgba(0, 214, 252, 0.5);
+            }
+            .buttonSideLeft {
+                box-shadow: -2px 2px 2px  rgba(0, 214, 252, 0.3);;
+            }
+            .buttonSideRight {
+                box-shadow: 2px -2px 2px  rgba(0, 214, 252, 0.3);;        
+            }
+        }
+    }
+    &SideLeft {
+        width: 180px;
+        height: 50px;
+        position: absolute;
+        bottom: -1px;
+        left: -1px;
+        border-left: solid 1px rgba(0, 214, 252, 0.3);
+        border-bottom: solid 1px rgba(0, 214, 252, 0.3);
+      
+        &::after { /*bot decoration */
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 10%;
+            width: 60px;
+            height: 1px;
+            transform: translateY(1px);
+            background: rgba(0, 214, 252, 1);
+            transition: all 0.25s ease;
+        } 
         &::before {
+            content: "";
+            position: absolute;
+            top: -11.3px;
+            left: -5px;
+            width: 31px;
+            height: 1px;
+            transform: rotate(-45deg);
+            background: rgba(0, 214, 252, 1);
+            border-radius: 50px;
+        }
+    }
+    &SideRight {
+        width: 180px;
+        height: 50px; 
+        position: absolute;
+        top: -1px;
+        right: -1px;
+        border-right: solid 1px rgba(0, 214, 252, 0.3);
+        border-top: solid 1px rgba(0, 214, 252, 0.3);
+
+        &::after { /* top decoration*/
             content: "";
             position: absolute;
             top: 0;
@@ -23,59 +120,16 @@
             background: rgba(0, 214, 252, 1);
             transition: all 0.25s ease;
         }
-        &::after {
+        &::before { /*bottom right diag*/
             content: "";
             position: absolute;
-            bottom: 0;
-            right: 10%;
-            width: 60px;
+            bottom: -11.3px;
+            right: -5px;
+            width: 31px;
             height: 1px;
-            transform: translateY(1px);
             background: rgba(0, 214, 252, 1);
-            transition: all 0.25s ease;
-        }
-        &:hover {
-            box-shadow: 1px 1px 8px rgba(0, 214, 252, 0.3);
-            color: rgba(0, 214, 252, 1);
-            text-shadow: 0 0 8px rgba(0, 214, 252, 0.4);
-            &.buttonBase::before {
-                left: 0;
-                width: 20px;
-            }
-            &.buttonBase::after {
-                right: 0;
-                width: 20px;
-            }
-            .buttonSide::before {
-                bottom: 0;
-            }
-            .buttonSide::after {
-                top: 0;
-            }
+            transform: rotate(-45deg);
+            border-radius: 50px;
         }
     }
-    &Side {
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: 30%;
-            right: 0;
-            width: 1px;
-            height: 20px;
-            transform: translateX(1px);
-            background: rgba(0, 214, 252, 1);
-            transition: all 0.25s ease;
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            top: 30%;
-            left: 0;
-            width: 1px;
-            height: 20px;
-            transform: translateX(-1px);
-            background: rgba(0, 214, 252, 1);
-            transition: all 0.25s ease;
-        }
-    }   
 }
