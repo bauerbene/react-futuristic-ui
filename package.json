@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/bauerbene"
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": "git@github.com:bauerbene/react-futuristic-ui.git",
   "author": "Benedikt Bauer <benedikt.bauer@posteo.de>",
   "license": "MIT",
@@ -29,6 +29,7 @@
     "tslib": "^2.4.0"
   },
   "scripts": {
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "clean": "rm -r ./dist"
   }
 }
